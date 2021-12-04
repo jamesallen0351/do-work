@@ -3,3 +3,6 @@
 This is a repo for me to do work in
 
 Working on Python practice problems
+
+There is no real rythm to this repo or notebook
+
