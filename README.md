@@ -6,3 +6,6 @@ Working on Python practice problems
 
 There is no real rythm to this repo or notebook
 
+I think I am going to use this repo for any scratchwork I need to do
+
+
