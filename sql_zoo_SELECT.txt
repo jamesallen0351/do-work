@@ -18,9 +18,17 @@ AND gdp/population > (SELECT gdp/population FROM world WHERE name = 'United King
   containing either Argentina or Australia. Order by name of the country. */
 
 /* SELECT name, continent FROM world
-    WHERE name = 'Argentina' OR name = 'Australia' */
+    WHERE name = 'Argentina' OR name = 'Australia' */ -- I ran this code first to find out the continent they are in --
 
 SELECT name, continent FROM world
 WHERE continent = 'South America'
-OR continent = 'Oceania' 
-ORDER BY name
+OR continent = 'Oceania' -- now that I knew the continent, I selected those two using OR so they all appear --
+ORDER BY name -- now I can order them by name --
+
+/* Which country has a population that is more than Canada but less than Poland?
+ Show the name and the population. */
+
+SELECT name, population FROM world
+WHERE population > (SELECT population FROM world WHERE name = 'Canada')
+AND population < (SELECT population FROM world WHERE
+name = 'Poland'); -- I had to select the poplation from Canada and poland so that I could use > < -- 
