@@ -64,4 +64,33 @@ SELECT player FROM game
 JOIN goal ON matchid = id
 WHERE stadium = 'National Stadium, Warsaw'
 
-/* 8. 
+/* 8. The example query shows all goals scored in the Germany-Greece quarterfinal.
+
+Instead show the name of all players who scored a goal against Germany.
+
+HINT
+Select goals scored only by non-German players in matches where GER was the id of either team1 or team2.
+
+You can use teamid!='GER' to prevent listing German players.
+
+You can use DISTINCT to stop players being listed twice. */
+
+SELECT DISTINCT(player) FROM game 
+JOIN goal ON matchid = id 
+WHERE (team1 = 'GER' OR team2 = 'GER') 
+AND teamid != 'GER'
+
+/* 9. Show teamname and the total number of goals scored */
+
+SELECT teamname, COUNT(*) FROM eteam 
+JOIN goal ON id=teamid
+GROUP BY teamname
+
+/* 10. Show the stadium and the number of goals scored in each stadium */
+
+SELECT stadium, COUNT(*) FROM game
+JOIN goal ON matchid=id
+GROUP BY stadium
+
+/* 11. For every match involving 'POL', show the matchid, date and the number of goals scored. */
+
