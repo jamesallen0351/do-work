@@ -42,3 +42,17 @@ SELECT name FROM actor
 JOIN casting ON id = actorid
 WHERE movieid = 10522
 
+/* List the films in which 'Harrison Ford' has appeared */
+
+SELECT title FROM movie
+JOIN casting ON movieid = id 
+WHERE actorid = (SELECT id FROM actor WHERE name = 'Harrison Ford')
+
+/* 9. List the films where 'Harrison Ford' has appeared - but not in the starring role. 
+[Note: the ord field of casting gives the position of the actor. If ord=1 then this actor 
+is in the starring role] */
+
+SELECT title FROM movie
+JOIN casting ON movieid = id 
+WHERE actorid = (SELECT id FROM actor WHERE name = 'Harrison Ford')
+AND ord != 1
