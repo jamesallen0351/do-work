@@ -62,3 +62,13 @@ AND ord != 1
 SELECT title, name FROM (actor JOIN casting ON  id = actorid) 
 JOIN movie ON movie.id = movieid 
 WHERE ord = 1 AND yr = 1962 
+
+/* 11. Which were the busiest years for 'Rock Hudson', show the year and the number of movies he made each year
+    for any year in which he made more than 2 movies. */
+
+SELECT yr,COUNT(title) FROM
+  movie JOIN casting ON movie.id=movieid
+        JOIN actor   ON actorid=actor.id
+WHERE name='Rock Hudson'
+GROUP BY yr
+HAVING COUNT(title) > 2
