@@ -72,3 +72,13 @@ SELECT yr,COUNT(title) FROM
 WHERE name='Rock Hudson'
 GROUP BY yr
 HAVING COUNT(title) > 2
+
+/* 12. List the film title and the leading actor for all the films 'Julie Andrews' played in. */
+
+SELECT title, name FROM (movie JOIN casting ON movie.id=movieid) 
+JOIN actor on actor.id=actorid
+WHERE ord=1 AND title IN(SELECT title
+FROM (movie JOIN casting ON movie.id=movieid) 
+JOIN actor on actor.id=actorid
+WHERE name='Julie Andrews') AND movie.id IN(SELECT movie.id FROM(movie JOIN casting ON movie.id=movieid) 
+JOIN actor on actor.id=actorid WHERE name='Julie Andrews')
