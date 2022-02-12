@@ -83,4 +83,9 @@ JOIN actor on actor.id=actorid
 WHERE name='Julie Andrews') AND movie.id IN(SELECT movie.id FROM(movie JOIN casting ON movie.id=movieid) 
 JOIN actor on actor.id=actorid WHERE name='Julie Andrews')
 
-/* 13. */
+/* 13. Obtain a list, in alphabetical order, of actors who've had at least 15 starring roles. */
+
+SELECT name FROM (actor JOIN casting ON actorid = actor.id) JOIN movie ON movieid = movie.id 
+WHERE ord = 1 AND actor.id = actorid 
+GROUP BY name HAVING count(*) >= 15;
+
