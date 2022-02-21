@@ -53,3 +53,4 @@ SELECT name, CASE WHEN dept IN (1, 2) THEN 'Sci' ELSE 'Art' END FROM teacher;
     show 'Art' if the teacher's dept is 3 and 'None' otherwise. */
 
 SELECT name, CASE WHEN dept IN (1, 2) THEN 'Sci' WHEN dept = 3 THEN 'Art' ELSE 'None' END from teacher;
+
