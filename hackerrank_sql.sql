@@ -26,6 +26,6 @@ SELECT ROUND(AVG(POPULATION)) FROM CITY;
 SELECT SUM(POPULATION) FROM CITY
 WHERE COUNTRYCODE = 'JPN';
 
-/* Qury the difference between the maximum and the minimum populations in CITY. */
+/* Query the difference between the maximum and the minimum populations in CITY. */
 
 SELECT MAX(POPULATION) - MIN(POPULATION) FROM CITY;
