@@ -29,3 +29,9 @@ WHERE COUNTRYCODE = 'JPN';
 /* Query the difference between the maximum and the minimum populations in CITY. */
 
 SELECT MAX(POPULATION) - MIN(POPULATION) FROM CITY;
+
+/* Write a query calculating the amount of error (actual - miscalculated average monthly salaries)
+    and round it up to the next integer. */
+
+SELECT CEIL(AVG(Salary) - AVG(REPLACE(Salary,'0', ''))) FROM EMPLOYEES
+
