@@ -54,3 +54,6 @@ FROM
 (SELECT DISTINCT SUBMISSION_DATE FROM SUBMISSIONS) S1
 GROUP BY SUBMISSION_DATE;
 
+/* Write a query to output all such symmetric pairs in ascending order by the value of X. 
+List the rows such that X1 ≤ Y1. */
+
