@@ -130,3 +130,7 @@ WHERE Start_Date < End_Date
 GROUP BY Start_Date
 ORDER BY DATEDIFF(min(End_Date), Start_Date) ASC, Start_Date ASC;
 
+/* Query a count of the number of cities in CITY having a Population larger than 100,000. */
+
+SELECT COUNT(*) FROM CITY
+WHERE POPULATION > 100000;
