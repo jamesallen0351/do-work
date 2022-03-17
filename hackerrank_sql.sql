@@ -142,3 +142,9 @@ SET @no_of_lines = 20 + 1;
 
 SELECT REPEAT('* ', @no_of_lines := @no_of_lines -1) 
 FROM INFORMATION_SCHEMA.TABLES;
+
+/* P(R) represents a pattern drawn by Julia in R rows.
+    Write a query to print the pattern P(20). */
+
+set @row := 0;
+select repeat('* ', @row := @row + 1) from information_schema.tables where @row < 20;
